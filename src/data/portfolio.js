@@ -205,18 +205,21 @@ export const achievements = [
     name: "1st Position - Smart India Hackathon", 
     date: "2025", 
     provider: "College Level",
-    details: "Won the 1st position at the college level for developing an innovative technical solution."
+    details: "Won the 1st position at the college level for developing an innovative technical solution.",
+    link: "#" // Waiting for link
   },
   { 
     name: "Intermediate Machine Learning", 
     date: "April 2026", 
     provider: "Kaggle",
-    details: "Gained hands-on experience in feature engineering and model validation using Random Forest and Decision Trees."
+    details: "Gained hands-on experience in feature engineering and model validation using Random Forest and Decision Trees.",
+    link: "https://www.kaggle.com/learn/certification/newaman/intermediate-machine-learning"
   },
   { 
     name: "Intro to Deep Learning", 
     date: "2026", 
     provider: "Kaggle",
-    details: "Mastered fundamental deep learning concepts including neural network architecture, activation functions, and model optimization."
+    details: "Mastered fundamental deep learning concepts including neural network architecture, activation functions, and model optimization.",
+    link: "https://www.kaggle.com/learn/certification/newaman/intro-to-deep-learning"
   },
 ];

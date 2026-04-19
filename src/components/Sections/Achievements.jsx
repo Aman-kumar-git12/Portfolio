@@ -23,7 +23,13 @@ const Achievements = ({ onOpenModal }) => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              onClick={() => onOpenModal(item, 'achievement')}
+              onClick={() => {
+                if (item.link && item.link !== "#") {
+                  window.open(item.link, '_blank', 'noopener,noreferrer');
+                } else {
+                  onOpenModal(item, 'achievement');
+                }
+              }}
               className="p-8 rounded-[2rem] bg-foreground/[0.03] border border-foreground/5 hover:bg-accent/5 hover:border-accent/20 transition-all group cursor-none"
             >
               <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500">
@@ -36,7 +42,7 @@ const Achievements = ({ onOpenModal }) => {
                 {item.date}
               </div>
               <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
-                View Details <ArrowRight size={14} />
+                {item.link && item.link !== "#" ? 'View Certificate' : 'View Details'} <ArrowRight size={14} />
               </div>
             </motion.div>
           ))}
