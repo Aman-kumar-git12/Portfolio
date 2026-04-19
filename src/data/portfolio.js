@@ -1,0 +1,183 @@
+export const personalInfo = {
+  name: "Aman Kumar",
+  role: "AI/ML Developer & Full Stack Engineer",
+  tagline: "Building scalable AI-driven solutions and high-performance systems with precision and passion.",
+  about: "Aspiring AI/ML developer with hands-on experience in System Design (TypeScript), Web Development, and Python. Backed by a strong foundation in Data Structures and Algorithms, I am passionate about building scalable, user-friendly applications with a keen interest in entrepreneurship and impactful solutions.",
+  email: "aman.kumar2024@nst.rishihood.edu.in",
+  phone: "+919835103570",
+  github: "https://github.com",
+  linkedin: "https://linkedin.com/in/aman-kumar",
+  codeforces: "https://codeforces.com/profile/aman",
+  leetcode: "https://leetcode.com/aman",
+};
+
+export const skills = {
+  "Languages": ["Python", "JavaScript", "TypeScript", "SQL", "HTML", "C++"],
+  "AI & Data": ["Machine Learning", "NumPy", "Pandas", "Matplotlib", "GenAI", "LangChain", "LangGraph", "Hugging Face", "LLM"],
+  "Backend": ["Node.js", "Express.js", "FastAPI", "MongoDB", "MySQL", "PostgreSQL", "Prisma ORM", "Redis", "Docker", "Kafka"],
+  "Frontend": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Three.js"],
+  "Tools & Others": ["Git", "GitHub", "Vercel", "Docker", "LangSmith", "OAuth 2.0", "Tableau", "Tableau", "Excel"],
+};
+
+export const projects = {
+  "Web Development": [
+    {
+      id: 1,
+      title: "TrustTrade",
+      date: "March 2026",
+      description: "A scalable full-stack B2B/B2C marketplace for high-volume digital transactions with AI-powered workflows.",
+      longDescription: "Built TrustTrade to enable users to discover listings, request quotes, negotiate pricing, and complete secure deals. Engineered using React, Tailwind CSS, Node.js, Express.js, MongoDB, and Python. Implemented optimized MongoDB schema design, role-based dashboards, and secure authentication with JWT-based protected routes.",
+      tech: ["React", "Node.js", "MongoDB", "Python", "LangGraph", "Tailwind CSS"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop",
+      problem: "Need for a secure, scalable marketplace capable of handling high-volume transactions with automated workflows.",
+      approach: "Used backend microservices and LangGraph-powered chatbots for navigation and recommendations.",
+      features: ["AI-powered workflows", "Role-based dashboards", "JWT Authentication", "LangGraph Chatbot"],
+      learnings: "Deepened expertise in MongoDB optimization and AI integration for UX enhancement.",
+      icon: "◈",
+    },
+    {
+      id: 2,
+      title: "CLiQ",
+      date: "February 2026",
+      description: "Full-stack social networking and collaboration platform supporting real-time communication and AI-driven recommendations.",
+      longDescription: "Built a scalable social networking platform supporting real-time communication, content sharing, and AI-driven recommendations. Engineered using Python, FastAPI, Node.js, Express.js, React, and MongoDB. Developed scalable RESTful APIs and backend services.",
+      tech: ["FastAPI", "React", "MongoDB", "Python", "LangChain", "Node.js"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop",
+      problem: "Creating a social platform that balances real-time performance with intelligent content delivery.",
+      approach: "Implemented AI-driven recommendation system for personalized connection suggestions and feeds.",
+      features: ["Real-time Communication", "AI Recommendation Feed", "Content Sharing", "Scalable REST APIs"],
+      learnings: "Mastered building scalable APIs and integrating AI models into live web applications.",
+      icon: "⬡",
+    },
+  ],
+  "Machine Learning": [
+    {
+      id: 3,
+      title: "Stock Predictor",
+      date: "January 2026",
+      description: "Time-series forecasting model using historical market data and deep learning. LSTM-based with ensemble boosting.",
+      tech: ["Python", "LSTM", "PyTorch"],
+      github: "#",
+      icon: "◉",
+      image: "https://images.unsplash.com/photo-1611974717482-98252c00245e?q=80&w=2000&auto=format&fit=crop",
+    },
+    {
+      id: 4,
+      title: "Sentinel Fraud",
+      date: "August 2025",
+      description: "Real-time transaction anomaly detection using gradient boosting and graph neural networks. Sub-10ms inference on SageMaker.",
+      tech: ["XGBoost", "FastAPI", "AWS"],
+      github: "#",
+      icon: "◈",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop",
+    },
+  ],
+  "Data Visualization": [
+    {
+      id: 5,
+      title: "Pulse Analytics",
+      date: "March 2026",
+      description: "Real-time operational intelligence with 40+ interactive chart types. WebSocket-driven live updates and cross-filter interactions.",
+      tech: ["D3.js", "WebSockets", "React"],
+      github: "#",
+      icon: "⬡",
+      image: "https://images.unsplash.com/photo-1551288049-bbbda536639a?q=80&w=2000&auto=format&fit=crop",
+    },
+    {
+      id: 6,
+      title: "GeoFlow Mapper",
+      date: "November 2025",
+      description: "Geospatial traffic analysis tool deployed across 3 city municipalities. Temporal playback over live map layers.",
+      tech: ["Mapbox GL", "PostGIS", "Deck.gl"],
+      github: "#",
+      icon: "◉",
+      image: "https://images.unsplash.com/photo-1526778545894-cd8044a88464?q=80&w=2000&auto=format&fit=crop",
+    },
+  ],
+  "Open Source": [
+    {
+      id: 7,
+      title: "DevKit CLI",
+      date: "December 2025",
+      description: "A blazing-fast developer toolkit CLI with scaffolding, linting pipelines and environment bootstrapping built in Rust.",
+      tech: ["Rust", "Node.js", "Shell"],
+      github: "#",
+      icon: "◈",
+      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2000&auto=format&fit=crop",
+    },
+    {
+      id: 8,
+      title: "Blockchain Demo",
+      date: "July 2025",
+      description: "Simple proof-of-work decentralized ledger demonstrating blockchain mechanics with peer-to-peer sync.",
+      tech: ["Golang", "P2P", "SHA256"],
+      github: "#",
+      icon: "◉",
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000&auto=format&fit=crop",
+    },
+  ],
+};
+
+export const education = [
+  {
+    college: "Newton School of Technology, Rishihood University",
+    degree: "Bachelor of Technology (Artificial Intelligence)",
+    duration: "2024 - 2025",
+    result: "Grade: 8.7/10.0",
+    details: "Focusing on AI, Machine Learning, and System Design."
+  },
+  {
+    college: "Lady Florence Convent School",
+    degree: "Intermediate (Class XII)",
+    duration: "2022 - 2023",
+    result: "Grade: 80.4%",
+    details: "Science stream with focus on Physics, Chemistry, and Mathematics."
+  },
+  {
+    college: "CD International School",
+    degree: "Matriculation (Class X)",
+    duration: "2020 - 2021",
+    result: "Grade: 83.4%",
+    details: "General science and mathematics foundation."
+  }
+];
+
+export const miniProjects = [
+  { title: "Ray Tracer", tech: "C++", description: "A multi-threaded CPU-based ray tracer demonstrating fundamental computer graphics physics.", link: "#" },
+  { title: "Chat App", tech: "Socket.io", description: "Real-time bidirectional chat platform with typing indicators and read receipts.", link: "#" },
+  { title: "Pathfinder", tech: "A* Algorithm", description: "Visualizer for graph traversal algorithms, showing shortest paths in a grid.", link: "#" },
+  { title: "Weather CLI", tech: "Rust", description: "Command-line tool hitting OpenWeather API to retrieve high-speed terminal forecasts.", link: "#" },
+  { title: "Stock Predictor", tech: "Python, LSTM", description: "Time-series forecasting model using historical market data and deep learning.", link: "#" },
+  { title: "Portfolio V1", tech: "HTML, CSS", description: "My very first development portfolio built with raw structural code.", link: "#" },
+  { title: "URL Shortener", tech: "Node.js, Redis", description: "High-throughput URL redirection service using Redis caching.", link: "#" },
+  { title: "Task Manager", tech: "React Native", description: "Cross-platform mobile application for tracking productivity.", link: "#" },
+  { title: "Expense Tracker", tech: "Vue.js", description: "Personal finance dashboard with real-time expenditure charts.", link: "#" },
+  { title: "Blockchain Demo", tech: "Golang", description: "A simple proof-of-work decentralized ledger demonstrating blockchain mechanics.", link: "#" },
+  { title: "Web Scraper", tech: "Python, BS4", description: "Automated bot for extracting structured e-commerce product data.", link: "#" },
+  { title: "Auth Service", tech: "Express, JWT", description: "A microservice handling secure user authentication and OAuth flows.", link: "#" },
+];
+
+export const achievements = [
+  { 
+    name: "1st Position - Smart India Hackathon", 
+    date: "2025", 
+    provider: "College Level",
+    details: "Won the 1st position at the college level for developing an innovative technical solution."
+  },
+  { 
+    name: "Intermediate Machine Learning", 
+    date: "April 2026", 
+    provider: "Kaggle",
+    details: "Gained hands-on experience in feature engineering and model validation using Random Forest and Decision Trees."
+  },
+  { 
+    name: "Codeforces Specialist (Target)", 
+    date: "2026", 
+    provider: "Codeforces",
+    details: "Rated 884 on Codeforces with a focus on competitive programming and algorithms."
+  },
+];
