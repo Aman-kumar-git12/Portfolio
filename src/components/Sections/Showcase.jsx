@@ -56,6 +56,36 @@ const Showcase = ({ onOpenModal }) => {
 
       </div>
 
+      {/* Category Navigator */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex items-center gap-12"
+      >
+        <span className="text-[10px] font-bold text-muted uppercase tracking-[0.3em] whitespace-nowrap">Explore Tracks:</span>
+        <div className="flex items-center gap-8">
+          {[
+            { name: "Web Dev", id: "web-development" },
+            { name: "ML / AI", id: "machine-learning" },
+            { name: "Data Viz", id: "data-visualization" },
+            { name: "Open Source", id: "open-source" }
+          ].map((cat) => (
+            <a 
+              key={cat.id} 
+              href={`#${cat.id}`}
+              className="group relative flex flex-col items-center"
+            >
+              <span className="text-xs font-mono font-medium text-muted group-hover:text-accent transition-colors duration-300">
+                {cat.name}
+              </span>
+              <div className="w-0 h-px bg-accent group-hover:w-full transition-all duration-300 mt-1" />
+            </a>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Grid Pattern in background */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
     </section>

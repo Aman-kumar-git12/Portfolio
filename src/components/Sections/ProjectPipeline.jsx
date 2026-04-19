@@ -57,6 +57,18 @@ export default function ProjectPipeline({ onOpenModal }) {
 
   return (
     <section ref={containerRef} id="pipeline" className="relative min-h-[400vh] bg-background">
+      {/* Scroll Anchors for Deep-Linking */}
+      <div className="absolute inset-0 pointer-events-none">
+        {SECTIONS.map((sec, i) => (
+          <div 
+            key={`anchor-${sec.id}`} 
+            id={sec.id} 
+            className="absolute left-0 w-full h-px"
+            style={{ top: `${(i / SECTIONS.length) * 100}%` }}
+          />
+        ))}
+      </div>
+
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none">
