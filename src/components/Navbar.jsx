@@ -53,7 +53,8 @@ const Navbar = ({ theme, toggleTheme }) => {
 
           <Magnetic strength={0.2}>
             <a 
-              href="#contact" 
+              href="/Resume.pdf"
+              download="Aman_Kumar_Resume.pdf"
               className="px-5 py-2.5 bg-accent/10 border border-accent/20 text-accent rounded-full text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-300"
             >
               Resume
