@@ -3,7 +3,7 @@ export const personalInfo = {
   role: "AI/ML Developer & Full Stack Engineer",
   tagline: "I don’t just write code — I build systems that solve real problems.",
   about: "Aspiring AI/ML developer with hands-on experience in System Design (TypeScript), Web Development, and Python. Backed by a strong foundation in Data Structures and Algorithms, I am passionate about building scalable, user-friendly applications with a keen interest in entrepreneurship and impactful solutions.",
-  email: "[rajaman5562@gmail.com]",
+  email: "rajaman5562@gmail.com",
   phone: "+919835103570",
   x: "https://x.com/AmanKum50754098",
   instagram: "https://www.instagram.com/itz__amanzz/",
