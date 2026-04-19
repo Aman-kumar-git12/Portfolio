@@ -22,9 +22,11 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight">
             Hi, I&apos;m <span className="text-gradient">{personalInfo.name}</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted mb-10 leading-relaxed font-sans max-w-2xl mx-auto">
-            {personalInfo.tagline}
-          </p>
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-2xl md:text-3xl font-display font-medium text-foreground leading-tight px-6 py-4 border-l-4 border-accent bg-accent/5 italic rounded-r-2xl">
+              &ldquo;{personalInfo.tagline}&rdquo;
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Magnetic strength={0.3}>

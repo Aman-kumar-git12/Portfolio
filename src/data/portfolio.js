@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Aman Kumar",
   role: "AI/ML Developer & Full Stack Engineer",
-  tagline: "Building scalable AI-driven solutions and high-performance systems with precision and passion.",
+  tagline: "I don’t just write code — I build systems that solve real problems.",
   about: "Aspiring AI/ML developer with hands-on experience in System Design (TypeScript), Web Development, and Python. Backed by a strong foundation in Data Structures and Algorithms, I am passionate about building scalable, user-friendly applications with a keen interest in entrepreneurship and impactful solutions.",
   email: "[EMAIL_ADDRESS]",
   phone: "+919835103570",
