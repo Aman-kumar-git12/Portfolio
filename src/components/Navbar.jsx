@@ -14,8 +14,8 @@ const Navbar = ({ theme, toggleTheme }) => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -25,9 +25,9 @@ const Navbar = ({ theme, toggleTheme }) => {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-display font-bold text-gradient"
+          className="text-3xl font-cursive text-gradient"
         >
-          AG.
+          Aman
         </motion.div>
         
         <div className="hidden md:flex items-center gap-8">

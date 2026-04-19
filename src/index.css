@@ -78,6 +78,10 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/80 to-accent;
   }
+  
+  .font-cursive {
+    font-family: 'Dancing Script', cursive;
+  }
 }
 
 html.lenis {
