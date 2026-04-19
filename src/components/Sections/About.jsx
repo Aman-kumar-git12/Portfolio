@@ -85,7 +85,7 @@ const About = () => {
                   }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
+                    src="/image.png"
                     alt="Aman Kumar"
                     className="w-full max-w-[650px] aspect-[4/5] lg:aspect-[3/4] object-cover grayscale brightness-90 dark:brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000 shadow-2xl dark:shadow-[20px_0_100px_rgba(0,0,0,0.8)]"
                   />
