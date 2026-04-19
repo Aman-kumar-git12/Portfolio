@@ -85,7 +85,7 @@ export default function SkillStackV2() {
     intervalRef.current = setInterval(() => {
       // Upward flow: New cards come from bottom, move to top
       setActive((p) => (p + 1) % SKILLS_DATA.length);
-    }, 3000);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -189,7 +189,7 @@ export default function SkillStackV2() {
                   transformOrigin: 'center center',
                   backfaceVisibility: 'hidden',
                   
-                  transition: 'all 0.9s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transition: 'all 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
 
                   boxShadow: isActive
                     ? `0 0 30px hsla(var(--accent-rgb), 0.2), 0 0 60px hsla(var(--accent-rgb), 0.1)`

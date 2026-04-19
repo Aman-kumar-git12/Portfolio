@@ -50,7 +50,7 @@ const SlantedOrbit = () => {
               index={i}
               total={3}
               radius={100}
-              duration={12}
+              duration={25}
               Icon={item.Icon}
               color={item.color}
             />
@@ -63,7 +63,7 @@ const SlantedOrbit = () => {
               index={i}
               total={2}
               radius={200}
-              duration={18}
+              duration={35}
               Icon={item.Icon}
               color={item.color}
             />
@@ -76,7 +76,7 @@ const SlantedOrbit = () => {
               index={i}
               total={3}
               radius={300}
-              duration={22}
+              duration={45}
               Icon={item.Icon}
               color={item.color}
             />

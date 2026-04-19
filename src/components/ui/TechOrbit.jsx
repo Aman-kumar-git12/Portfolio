@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Code2, 
-  Database, 
-  Cpu, 
-  Layers, 
-  Globe, 
-  Terminal, 
+import {
+  Code2,
+  Database,
+  Cpu,
+  Layers,
+  Globe,
+  Terminal,
   Hash,
   Cloud,
   Github,
@@ -32,7 +32,7 @@ const icons = [
 
 const OrbitIcon = ({ Icon, index, radius, duration, color }) => {
   const angle = (index / icons.length) * 360;
-  
+
   return (
     <motion.div
       className="absolute"
@@ -67,7 +67,7 @@ const OrbitIcon = ({ Icon, index, radius, duration, color }) => {
           transformOrigin: `50% ${radius + 24}px`
         }}
       >
-        <div 
+        <div
           className="absolute inset-0 rounded-2xl blur-md opacity-20 group-hover:opacity-40 transition-opacity"
           style={{ backgroundColor: color }}
         />
@@ -93,25 +93,25 @@ const TechOrbit = () => {
 
       {/* Orbiting Icons - Outer Layer */}
       {icons.slice(0, 6).map((icon, i) => (
-        <OrbitIcon 
-          key={i} 
-          Icon={icon.Icon} 
-          index={i} 
-          radius={225} 
-          duration={15} 
-          color={icon.color} 
+        <OrbitIcon
+          key={i}
+          Icon={icon.Icon}
+          index={i}
+          radius={225}
+          duration={30}
+          color={icon.color}
         />
       ))}
 
       {/* Orbiting Icons - Inner Layer */}
       {icons.slice(6).map((icon, i) => (
-        <OrbitIcon 
-          key={i} 
-          Icon={icon.Icon} 
-          index={i} 
-          radius={300} 
-          duration={20} 
-          color={icon.color} 
+        <OrbitIcon
+          key={i}
+          Icon={icon.Icon}
+          index={i}
+          radius={300}
+          duration={40}
+          color={icon.color}
         />
       ))}
 
