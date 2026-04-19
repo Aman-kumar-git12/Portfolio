@@ -60,7 +60,7 @@ function SkillCard({
     controls.start({
       ...getStackTarget(index),
       rotate: 0,
-      transition: { type: 'spring', stiffness: 400, damping: 28, mass: 0.7 },
+      transition: { type: 'spring', stiffness: 600, damping: 35, mass: 0.5 },
     });
   }, [index, controls]);
 
@@ -130,7 +130,7 @@ function SkillCard({
       controls.start({
         ...getStackTarget(0),
         rotate: 0,
-        transition: { type: 'spring', stiffness: 450, damping: 22 },
+        transition: { type: 'spring', stiffness: 650, damping: 30 },
       });
     }
   }, [controls, onCycle]);
@@ -273,7 +273,7 @@ export default function SkillsStack({ onOpenModal }) {
         return next;
       });
       setIsAnimating(false);
-    }, 200);
+    }, 120);
   }, [isAnimating]);
 
   return (
