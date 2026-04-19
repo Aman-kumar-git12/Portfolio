@@ -98,7 +98,7 @@ const TechOrbit = () => {
           Icon={icon.Icon} 
           index={i} 
           radius={225} 
-          duration={30} 
+          duration={15} 
           color={icon.color} 
         />
       ))}
@@ -110,7 +110,7 @@ const TechOrbit = () => {
           Icon={icon.Icon} 
           index={i} 
           radius={300} 
-          duration={40} 
+          duration={20} 
           color={icon.color} 
         />
       ))}
