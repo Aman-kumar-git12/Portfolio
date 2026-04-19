@@ -3,7 +3,7 @@ export const personalInfo = {
   role: "AI/ML Developer & Full Stack Engineer",
   tagline: "I don’t just write code — I build systems that solve real problems.",
   about: "Aspiring AI/ML developer with hands-on experience in System Design (TypeScript), Web Development, and Python. Backed by a strong foundation in Data Structures and Algorithms, I am passionate about building scalable, user-friendly applications with a keen interest in entrepreneurship and impactful solutions.",
-  email: "[EMAIL_ADDRESS]",
+  email: "[rajaman5562@gmail.com]",
   phone: "+919835103570",
   x: "https://x.com/AmanKum50754098",
   instagram: "https://www.instagram.com/itz__amanzz/",
@@ -201,23 +201,23 @@ export const miniProjects = [
 ];
 
 export const achievements = [
-  { 
-    name: "1st Position - Smart India Hackathon", 
-    date: "2025", 
+  {
+    name: "1st Position - Smart India Hackathon",
+    date: "2025",
     provider: "College Level",
     details: "Won the 1st position at the college level for developing an innovative technical solution.",
     link: "#" // Waiting for link
   },
-  { 
-    name: "Intermediate Machine Learning", 
-    date: "April 2026", 
+  {
+    name: "Intermediate Machine Learning",
+    date: "April 2026",
     provider: "Kaggle",
     details: "Gained hands-on experience in feature engineering and model validation using Random Forest and Decision Trees.",
     link: "https://www.kaggle.com/learn/certification/newaman/intermediate-machine-learning"
   },
-  { 
-    name: "Intro to Deep Learning", 
-    date: "2026", 
+  {
+    name: "Intro to Deep Learning",
+    date: "2026",
     provider: "Kaggle",
     details: "Mastered fundamental deep learning concepts including neural network architecture, activation functions, and model optimization.",
     link: "https://www.kaggle.com/learn/certification/newaman/intro-to-deep-learning"
