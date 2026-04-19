@@ -4,7 +4,9 @@ import { projects } from '../../data/portfolio';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 const HorizontalStack = ({ onOpenModal }) => {
-  const allProjects = Object.values(projects).flat();
+  const allProjects = Object.values(projects).flat().filter(p => 
+    p.title === 'TrustTrade' || p.title === 'CLiQ'
+  );
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);

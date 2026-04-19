@@ -19,13 +19,13 @@ const Showcase = ({ onOpenModal }) => {
             viewport={{ once: true }}
             className="relative z-10 mb-12 lg:mb-0"
           >
-            <h2 className="text-sm font-bold text-accent uppercase tracking-[0.3em] mb-6">Real-time Ecosystem</h2>
+            <h2 className="text-sm font-bold text-accent uppercase tracking-[0.3em] mb-6">Featured Projects</h2>
             <h3 className="text-5xl md:text-7xl font-display font-medium mb-8 leading-[1.1]">
-              Technological <br />
-              <span className="text-gradient">Orbits</span>
+              Engineering <br />
+              <span className="text-gradient">Future-Ready</span> Projects
             </h3>
             <p className="text-lg text-muted max-w-md leading-relaxed">
-              Exploring the convergence of multi-disciplinary stacks and high-performance engineering in a rotating digital space.
+              Turning ideas into scalable products through consistent learning, disciplined execution, and a focus on real-world impact.
             </p>
           </motion.div>
 
