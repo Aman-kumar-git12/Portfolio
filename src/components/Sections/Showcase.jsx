@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Showcase = ({ onOpenModal }) => {
   return (
-    <section id="showcase" className="relative min-h-screen py-32 md:py-48 flex items-center overflow-hidden bg-background">
+    <section id="projects" className="relative min-h-screen py-32 md:py-48 flex items-center overflow-hidden bg-background">
       {/* Background Decorative Gradient */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05),transparent_70%)] pointer-events-none" />
 

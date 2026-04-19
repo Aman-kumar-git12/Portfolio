@@ -56,7 +56,7 @@ export default function ProjectPipeline({ onOpenModal }) {
   const NODES = SECTIONS.length;
 
   return (
-    <section ref={containerRef} id="projects" className="relative min-h-[400vh] bg-background">
+    <section ref={containerRef} id="pipeline" className="relative min-h-[400vh] bg-background">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none">
