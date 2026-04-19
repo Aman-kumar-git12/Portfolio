@@ -9,7 +9,10 @@ const Achievements = ({ onOpenModal }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <h2 className="text-sm font-bold text-accent uppercase tracking-widest mb-4">Milestones</h2>
-          <h3 className="text-4xl md:text-5xl font-display font-medium">Achievements & Awards</h3>
+          <h3 className="text-4xl md:text-5xl font-display font-medium">Achievement and Certificate</h3>
+          <p className="text-muted text-lg max-w-2xl mt-6 leading-relaxed">
+            A curated showcase of technical milestones, professional certifications, and specialized learning paths.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

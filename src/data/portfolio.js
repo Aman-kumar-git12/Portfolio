@@ -214,9 +214,9 @@ export const achievements = [
     details: "Gained hands-on experience in feature engineering and model validation using Random Forest and Decision Trees."
   },
   { 
-    name: "Codeforces Specialist (Target)", 
+    name: "Intro to Deep Learning", 
     date: "2026", 
-    provider: "Codeforces",
-    details: "Rated 884 on Codeforces with a focus on competitive programming and algorithms."
+    provider: "Kaggle",
+    details: "Mastered fundamental deep learning concepts including neural network architecture, activation functions, and model optimization."
   },
 ];

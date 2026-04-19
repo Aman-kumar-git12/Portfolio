@@ -85,7 +85,7 @@ const SlantedOrbit = () => {
           {/* Floating Chips - Positioned to be clearly visible */}
           <FloatingChip angle={20} distance={180} name="Aman Kumar" role="Joined 2024" provider="Newton School" />
           <FloatingChip angle={140} distance={200} name="SIH Winner" role="1st Position" provider="College Level" />
-          <FloatingChip angle={210} distance={250} name="Codeforces" role="Specialist" provider="884+ Rating" />
+          <FloatingChip angle={210} distance={250} name="Deep Learning" role="Intro Course" provider="Kaggle" />
         </div>
       </div>
 
