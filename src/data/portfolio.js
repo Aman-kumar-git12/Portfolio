@@ -75,8 +75,7 @@ export const projects = {
       ],
       github: "https://github.com/Aman-kumar-git12/TrustTradeDev",
       live: "https://trust-trade-dev.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop",
+      image: "/TrustTrade.png",
       problem:
         "Need for a secure, scalable marketplace capable of handling high-volume transactions with automated workflows.",
       approach:
@@ -102,8 +101,7 @@ export const projects = {
       tech: ["FastAPI", "React", "MongoDB", "Python", "LangChain", "Node.js"],
       github: "https://github.com/Aman-kumar-git12/CliQ_Web",
       live: "https://cliq-web-rho.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop",
+      image: "/CliQ.png",
       problem:
         "Creating a social platform that balances real-time performance with intelligent content delivery.",
       approach:
@@ -137,7 +135,7 @@ export const projects = {
       ],
       github: "https://github.com/Aman-kumar-git12/Data_Analysis-1",
       live: "https://data-analysis-1.vercel.app/",
-      image: "/data_analysis_showcase_preview.png",
+      image: "/ChurnCortex.jpg",
       problem:
         "High customer attrition in subscription-based services needing data-driven retention strategies.",
       approach:
@@ -170,8 +168,7 @@ export const projects = {
       ],
       github: "https://github.com/Aman-kumar-git12/TrustTradeDev",
       live: "https://trust-trade-dev.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop",
+      image: "/TrustTrade.png",
       problem:
         "Need for a secure, scalable marketplace capable of handling high-volume transactions with automated workflows.",
       approach:
@@ -206,7 +203,7 @@ export const projects = {
       ],
       github: "https://github.com/Aman-kumar-git12/Data_Analysis-1",
       live: "https://data-analysis-1.vercel.app/",
-      image: "/data_analysis_showcase_preview.png",
+      image: "/Analytica.png",
       problem:
         "Traditional data portfolios often lack interactivity and a cohesive narrative.",
       approach:
@@ -232,9 +229,8 @@ export const projects = {
       tech: ["Python", "Pandas", "Tableau", "ETL", "Data Visualization"],
       github:
         "https://github.com/Aman-kumar-git12/D_G14_CreditLoanRiskAnalysis",
-      live: "https://risk-lens-credit-risk-intelligence.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1560472355-536de3962603?q=80&w=2000&auto=format&fit=crop",
+      live: "https://public.tableau.com/app/profile/aman.kumar7311/viz/bank_loan_risk/Dashboard1?publish=yes",
+      image: "/RiskLens.png",
       problem:
         "Need for automated risk segmentation and borrower profile analysis to support complex lending decisions.",
       approach:
@@ -263,8 +259,7 @@ export const projects = {
       github: "https://github.com/Aman-kumar-git12",
       live: "https://data-analysis-1.vercel.app/",
       liveLabel: "A GitHub profile with contributions I wish I had 😭",
-      image:
-        "https://images.unsplash.com/photo-1618401471353-b98aadebc255?q=80&w=2000&auto=format&fit=crop",
+      image: "/Analytica.png",
       problem:
         "Developers often need a more engaging way to showcase projects than traditional portfolio cards.",
       approach:
