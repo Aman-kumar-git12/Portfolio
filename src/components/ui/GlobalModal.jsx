@@ -240,8 +240,15 @@ const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal, onShowSnackbar 
                         </div>
                         <h4 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">{project.title}</h4>
                       </div>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors bg-foreground/5 p-2 rounded-full hover:bg-foreground/10">
-                        <Github size={18} />
+                      <a href={project.link !== '#' ? project.link : undefined} target={project.link !== '#' ? "_blank" : undefined} rel="noopener noreferrer" className={`transition-colors p-2 rounded-full flex items-center gap-2 ${project.link !== '#' ? 'text-accent hover:text-accent-foreground bg-accent/10 hover:bg-accent' : 'text-muted cursor-default'}`}>
+                        {project.link !== '#' ? (
+                          <>
+                            <span className="text-xs font-bold uppercase tracking-widest hidden sm:inline-block">Visit</span>
+                            <ExternalLink size={18} />
+                          </>
+                        ) : (
+                          <Github size={18} />
+                        )}
                       </a>
                     </div>
                     <p className="text-sm text-muted mb-6 leading-relaxed relative z-10">

@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { miniProjects } from '../../data/portfolio';
-import { Github, Folder, ArrowRight } from 'lucide-react';
+import { Github, Folder, ArrowRight, ExternalLink } from 'lucide-react';
 
 const MiniProjects = ({ onOpenModal }) => {
+  const inactiveProjects = miniProjects.filter(p => !p.active);
   const activeProjects = miniProjects.filter(p => p.active);
-  const half = Math.ceil(activeProjects.length / 2) || 1; // fallback to 1 to avoid empty slices if only 1 active project
-  const topRow = activeProjects.slice(0, half);
-  const bottomRow = activeProjects.slice(half);
+  
+  const half = Math.ceil(inactiveProjects.length / 2) || 1; 
+  const topRow = inactiveProjects.slice(0, half);
+  const bottomRow = inactiveProjects.slice(half);
 
   return (
     <section className="py-32 md:py-48 bg-transparent overflow-hidden">

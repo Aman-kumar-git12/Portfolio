@@ -309,11 +309,11 @@ export const education = [
 
 export const miniProjects = [
   {
-    title: "Ray Tracer",
-    tech: "C++",
+    title: "Resume Screener",
+    tech: "n8n",
     description:
-      "A multi-threaded CPU-based ray tracer demonstrating fundamental computer graphics physics.",
-    link: "#",
+      "Built a resume evaluation platform that allows users to upload resumes and receive an automated screening score with insights into candidate suitability.",
+    link: "https://aman-kumar-git12.github.io/Resume_screening/",
     active: true,
   },
   {
@@ -322,7 +322,7 @@ export const miniProjects = [
     description:
       "Real-time bidirectional chat platform with typing indicators and read receipts.",
     link: "#",
-    active: true,
+    active: false,
   },
   {
     title: "Pathfinder",
@@ -330,7 +330,7 @@ export const miniProjects = [
     description:
       "Visualizer for graph traversal algorithms, showing shortest paths in a grid.",
     link: "#",
-    active: true,
+    active: false,
   },
   {
     title: "Weather CLI",
@@ -338,7 +338,7 @@ export const miniProjects = [
     description:
       "Command-line tool hitting OpenWeather API to retrieve high-speed terminal forecasts.",
     link: "#",
-    active: true,
+    active: false,
   },
   {
     title: "Stock Predictor",
@@ -346,7 +346,7 @@ export const miniProjects = [
     description:
       "Time-series forecasting model using historical market data and deep learning.",
     link: "#",
-    active: true,
+    active: false,
   },
   {
     title: "Portfolio V1",
@@ -354,7 +354,7 @@ export const miniProjects = [
     description:
       "My very first development portfolio built with raw structural code.",
     link: "#",
-    active: true,
+    active: false,
   },
   {
     title: "URL Shortener",

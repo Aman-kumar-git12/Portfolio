@@ -27,14 +27,14 @@ const Education = ({ onOpenModal }) => {
           </p>
         </div>
 
-        <RoadmapCanvas
-          nodes={roadmapNodes}
-          onNodeActive={(idx) => setActiveIdx(idx)}
-        >
-          {(coords) => (
-            <>
-              {/* Desktop Layout - Exactly Aligned with Canvas */}
-              <div className="absolute inset-0 hidden lg:block overflow-visible">
+        {/* Desktop View with Canvas */}
+        <div className="hidden lg:block">
+          <RoadmapCanvas
+            nodes={roadmapNodes}
+            onNodeActive={(idx) => setActiveIdx(idx)}
+          >
+            {(coords) => (
+              <div className="absolute inset-0 overflow-visible">
                 {chronEducation.map((item, idx) => {
                   const Icon = ICON_MAP[idx] || GraduationCap;
                   const isActive = activeIdx === idx;
@@ -57,7 +57,7 @@ const Education = ({ onOpenModal }) => {
                         left: `${pos.x - 120}px`, 
                         top: `${pos.y - 110}px` 
                       }}
-                      className="absolute -translate-x-1/2 -translate-y-1/2 group w-64 p-6 rounded-3xl backdrop-blur-md border-2 border-dashed transition-all cursor-none z-30 pointer-events-auto"
+                      className="absolute -translate-x-1/2 -translate-y-1/2 group w-64 p-6 rounded-3xl backdrop-blur-md border-2 border-dashed transition-all cursor-pointer z-30 pointer-events-auto"
                     >
                       <div className="flex flex-col items-center text-center">
                         <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 mb-6 ${isActive ? 'bg-accent text-accent-foreground scale-110 shadow-[0_0_20px_rgba(var(--accent-rgb),0.5)]' : 'bg-accent/10 text-accent'
@@ -74,35 +74,49 @@ const Education = ({ onOpenModal }) => {
                   );
                 })}
               </div>
+            )}
+          </RoadmapCanvas>
+        </div>
 
-              {/* Mobile Layout (Stacked) */}
-              <div className="lg:hidden flex flex-col gap-12 relative z-20 px-4 py-12">
-                {chronEducation.map((item, idx) => {
-                  const Icon = ICON_MAP[idx] || GraduationCap;
-                  return (
-                    <motion.div
-                      key={item.college}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      onClick={() => onOpenModal(item, 'education')}
-                      className="w-full p-8 rounded-3xl bg-surface/40 backdrop-blur-md border-2 border-dashed border-accent/30 flex items-center gap-6"
-                    >
-                      <div className="shrink-0 w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
-                        <Icon size={32} />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-accent mb-1">{item.degree}</h4>
-                        <p className="text-lg font-bold text-foreground leading-tight">{item.college}</p>
-                        <p className="text-xs font-mono text-muted mt-2">{item.duration}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </>
-          )}
-        </RoadmapCanvas>
+        {/* Mobile View (Clean Stack) */}
+        <div className="lg:hidden relative z-20 py-8">
+          {/* Mobile Grid Background */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-100" style={{
+            backgroundImage: `linear-gradient(rgba(var(--accent-rgb), 0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--accent-rgb), 0.3) 1px,transparent 1px)`,
+            backgroundSize: '48px 48px',
+            animation: 'rmc-grid 20s linear infinite',
+            maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+          }} />
+          <style>{`
+            @keyframes rmc-grid { from{background-position:0 0} to{background-position:48px 48px} }
+          `}</style>
+
+          <div className="flex flex-col gap-6 relative z-10">
+            {chronEducation.map((item, idx) => {
+              const Icon = ICON_MAP[idx] || GraduationCap;
+              return (
+                <motion.div
+                  key={item.college}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  onClick={() => onOpenModal(item, 'education')}
+                  className="w-full p-6 rounded-3xl bg-surface/80 backdrop-blur-xl border border-foreground/5 shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                >
+                  <div className="shrink-0 w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20">
+                    <Icon size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-[10px] font-mono font-bold uppercase tracking-widest text-accent mb-1.5">{item.degree}</h4>
+                    <p className="text-lg font-display font-bold text-foreground leading-tight mb-2">{item.college}</p>
+                    <p className="text-[11px] font-mono text-muted">{item.duration} · {item.result}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -22,18 +22,18 @@ const Contact = () => {
             <Magnetic strength={0.2}>
               <a 
                 href={`mailto:${personalInfo.email}`}
-                className="group flex items-center justify-between p-8 rounded-[2rem] bg-foreground/[0.03] border border-foreground/5 hover:border-accent/40 transition-all duration-300"
+                className="group flex items-center justify-between p-6 sm:p-8 rounded-[2rem] bg-foreground/[0.03] border border-foreground/5 hover:border-accent/40 transition-all duration-300"
               >
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
-                    <Mail size={24} />
+                <div className="flex items-center gap-4 sm:gap-6 w-full overflow-hidden">
+                  <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+                    <Mail size={20} className="sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-muted uppercase tracking-wider mb-1">Email Me</h4>
-                    <p className="text-xl font-bold">{personalInfo.email}</p>
+                  <div className="overflow-hidden">
+                    <h4 className="text-xs sm:text-sm font-bold text-muted uppercase tracking-wider mb-1">Email Me</h4>
+                    <p className="text-sm sm:text-lg md:text-xl font-bold truncate">{personalInfo.email}</p>
                   </div>
                 </div>
-                <ArrowUpRight size={24} className="text-muted group-hover:text-accent group-hover:rotate-45 transition-all" />
+                <ArrowUpRight size={20} className="shrink-0 text-muted group-hover:text-accent group-hover:rotate-45 transition-all ml-2 sm:w-6 sm:h-6" />
               </a>
             </Magnetic>
 
