@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { personalInfo } from '../../data/portfolio';
 import Magnetic from '../ui/Magnetic';
 import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';

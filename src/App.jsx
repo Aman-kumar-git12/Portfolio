@@ -5,7 +5,6 @@ import Hero from './components/Sections/Hero';
 import About from './components/Sections/About';
 import Showcase from './components/Sections/Showcase';
 import SkillsShowcase from './components/Sections/SkillsShowcase';
-import Projects from './components/Sections/Projects';
 import ProjectPipeline from './components/Sections/ProjectPipeline';
 import MiniProjects from './components/Sections/MiniProjects';
 import Achievements from './components/Sections/Achievements';
@@ -14,6 +13,8 @@ import Contact from './components/Sections/Contact';
 import CustomCursor from './components/CustomCursor';
 import ScrollWrapper from './components/ScrollWrapper';
 import GlobalModal from './components/ui/GlobalModal';
+import Snackbar from './components/ui/Snackbar';
+import ResumeModal from './components/ui/ResumeModal';
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('portfolio-theme') || 'dark');
@@ -36,6 +37,8 @@ function App() {
     data: null,
     type: null,
   });
+  
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   const openModal = (data, type) => {
     setModalConfig({
@@ -49,14 +52,30 @@ function App() {
     setModalConfig(prev => ({ ...prev, isOpen: false }));
   };
 
+  const [snackbarConfig, setSnackbarConfig] = useState({
+    isOpen: false,
+    message: '',
+  });
+
+  const showSnackbar = (message) => {
+    setSnackbarConfig({
+      isOpen: true,
+      message,
+    });
+  };
+
+  const closeSnackbar = () => {
+    setSnackbarConfig(prev => ({ ...prev, isOpen: false }));
+  };
+
   return (
     <ScrollWrapper>
       <div className="bg-background text-foreground selection:bg-accent/30 selection:text-accent">
         <CustomCursor />
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <Navbar theme={theme} toggleTheme={toggleTheme} onOpenResumeModal={() => setIsResumeModalOpen(true)} />
         
         <main>
-          <Hero />
+          <Hero onOpenResumeModal={() => setIsResumeModalOpen(true)} />
           <About />
           <Education onOpenModal={openModal} />
           <Showcase onOpenModal={openModal} />
@@ -75,7 +94,16 @@ function App() {
           data={modalConfig.data}
           type={modalConfig.type}
           onOpenModal={openModal}
+          onShowSnackbar={showSnackbar}
         />
+
+        <Snackbar 
+          isOpen={snackbarConfig.isOpen}
+          message={snackbarConfig.message}
+          onClose={closeSnackbar}
+        />
+        
+        <ResumeModal isOpen={isResumeModalOpen} onClose={() => setIsResumeModalOpen(false)} />
       </div>
     </ScrollWrapper>
   );

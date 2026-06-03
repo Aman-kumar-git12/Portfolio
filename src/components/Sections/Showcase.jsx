@@ -69,8 +69,7 @@ const Showcase = ({ onOpenModal }) => {
           {[
             { name: "Web Dev", id: "web-development" },
             { name: "ML / AI", id: "machine-learning" },
-            { name: "Data Viz", id: "data-visualization" },
-            { name: "Open Source", id: "open-source" }
+            { name: "Data Viz", id: "data-visualization" }
           ].map((cat) => (
             <a 
               key={cat.id} 

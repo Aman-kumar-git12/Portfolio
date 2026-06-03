@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../../data/portfolio';
 import Magnetic from '../ui/Magnetic';
-import { ChevronRight, Download } from 'lucide-react';
+import { ChevronRight, Download, X } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ onOpenResumeModal }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Decorative Element */}
@@ -28,7 +28,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-50">
             <Magnetic strength={0.3}>
               <a
                 href="#projects"
@@ -39,18 +39,18 @@ const Hero = () => {
               </a>
             </Magnetic>
             <Magnetic strength={0.3}>
-              <a 
-                href="/Resume.pdf"
-                download="Aman_Kumar_Resume.pdf" 
+              <button 
+                onClick={onOpenResumeModal}
                 className="flex items-center gap-2 px-8 py-4 bg-foreground/5 border border-foreground/10 hover:bg-foreground/10 text-foreground rounded-full font-bold transition-all"
               >
                 <Download size={18} />
                 Download CV
-              </a>
+              </button>
             </Magnetic>
           </div>
         </motion.div>
       </div>
+
 
       {/* Scroll Indicator */}
       <motion.div

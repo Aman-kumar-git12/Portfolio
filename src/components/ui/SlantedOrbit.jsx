@@ -142,6 +142,13 @@ const FloatingChip = ({ angle, distance, name, role, provider }) => {
   const x = Math.cos((angle * Math.PI) / 180) * distance;
   const y = Math.sin((angle * Math.PI) / 180) * distance;
 
+  // Generate a stable pseudo-random duration based on the name to satisfy React 19 purity rules
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const randomDuration = 4 + (Math.abs(hash % 1000) / 1000) * 2;
+
   return (
     <motion.div
       className="absolute p-3 rounded-xl bg-surface/90 border border-foreground/10 shadow-2xl backdrop-blur-3xl min-w-[180px]"
@@ -149,7 +156,7 @@ const FloatingChip = ({ angle, distance, name, role, provider }) => {
         y: [y - 10, y + 10, y - 10],
       }}
       transition={{
-        duration: 4 + Math.random() * 2,
+        duration: randomDuration,
         repeat: Infinity,
         ease: "easeInOut"
       }}

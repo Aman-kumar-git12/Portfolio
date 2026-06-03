@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, Globe, Layers, ArrowRight } from 'lucide-react';
 
-const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal }) => {
+const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal, onShowSnackbar }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,7 +33,20 @@ const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal }) => {
               />
               <div className="flex gap-4">
                 {data.live && (
-                  <a href={data.live} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                  <a 
+                    href={data.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    onClick={(e) => {
+                      if (data.liveLabel) {
+                        e.preventDefault();
+                        if (onShowSnackbar) {
+                          onShowSnackbar(data.liveLabel);
+                        }
+                      }
+                    }}
+                    className="flex-1 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                  >
                     Live Demo <ExternalLink size={18} />
                   </a>
                 )}
@@ -82,7 +95,7 @@ const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal }) => {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <a href={data.link || "#"} className="px-8 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+              <a href={data.link || "#"} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
                 Visit Learning Path <Globe size={18} />
               </a>
             </div>
@@ -104,7 +117,7 @@ const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal }) => {
               {data.details}
             </p>
             <div className="flex justify-start">
-              <a href={data.link || "#"} className="px-8 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+              <a href={data.link || "#"} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-accent text-accent-foreground rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
                 View Certificate <ExternalLink size={18} />
               </a>
             </div>
@@ -227,7 +240,7 @@ const GlobalModal = ({ isOpen, onClose, data, type, onOpenModal }) => {
                         </div>
                         <h4 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">{project.title}</h4>
                       </div>
-                      <a href={project.link} className="text-muted hover:text-foreground transition-colors bg-foreground/5 p-2 rounded-full hover:bg-foreground/10">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors bg-foreground/5 p-2 rounded-full hover:bg-foreground/10">
                         <Github size={18} />
                       </a>
                     </div>

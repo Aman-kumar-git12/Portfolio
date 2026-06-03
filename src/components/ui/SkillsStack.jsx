@@ -41,7 +41,7 @@ function lerpTarget(from, to, t) {
 
 function SkillCard({
   category, items,
-  index, total,
+  index,
   onCycle, isAnimating, onOpenModal,
   dragProgress,   // 0–1 live drag value from parent, drives sibling promotion
   isTopCard,
@@ -229,16 +229,16 @@ function SkillCard({
 
 // ─── ProgressPips ─────────────────────────────────────────────────────────────
 
-function ProgressPips({ total }) {
+function ProgressPips({ activeIndex, total }) {
   return (
     <div className="flex gap-[7px] items-center justify-center mt-5">
       {Array.from({ length: total }).map((_, i) => (
         <motion.div
           key={i}
-          animate={{ width: i === 0 ? 20 : 7, opacity: i === 0 ? 1 : 0.35 }}
+          animate={{ width: i === activeIndex ? 20 : 7, opacity: i === activeIndex ? 1 : 0.35 }}
           transition={{ type: 'spring', stiffness: 300, damping: 24 }}
           className="h-[7px] rounded-full"
-          style={{ background: i === 0 ? '#10B981' : '#6B7280' }}
+          style={{ background: i === activeIndex ? 'hsl(var(--accent))' : '#6B7280' }}
         />
       ))}
     </div>
@@ -252,6 +252,9 @@ export default function SkillsStack({ onOpenModal }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [hintVisible, setHintVisible] = useState(true);
   const [liveDrag, setLiveDrag]       = useState(0);   // 0–1, drives sibling promotion
+
+  const originalCategories = Object.keys(skills);
+  const activeIndex = originalCategories.indexOf(cards[0][0]);
 
   // Unified handler: top card reports both live drag progress and final commit
   const handleCycle = useCallback((mode, pct) => {
@@ -290,7 +293,6 @@ export default function SkillsStack({ onOpenModal }) {
               category={category}
               items={items}
               index={index}
-              total={cards.length}
               onCycle={handleCycle}
               isAnimating={isAnimating}
               onOpenModal={onOpenModal}
@@ -300,6 +302,8 @@ export default function SkillsStack({ onOpenModal }) {
           );
         })}
       </div>
+
+      <ProgressPips activeIndex={activeIndex} total={cards.length} />
 
       {/* First-time drag hint & View All Button */}
       <div className="mt-6 flex flex-col items-center gap-6 relative z-50">

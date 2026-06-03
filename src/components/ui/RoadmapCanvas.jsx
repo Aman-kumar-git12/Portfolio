@@ -10,6 +10,7 @@ const RoadmapCanvas = ({ children, nodes = [], activePath = true, onNodeActive }
   const glowRef = useRef(null);
   const mainRef = useRef(null);
   const particlesRef = useRef(null);
+  const tickRef = useRef(null);
 
   const [coords, setCoords] = useState([]);
 
@@ -146,8 +147,12 @@ const RoadmapCanvas = ({ children, nodes = [], activePath = true, onNodeActive }
     }
     drawParticles();
 
-    s.raf = requestAnimationFrame(tick);
+    s.raf = requestAnimationFrame(tickRef.current);
   }, [drawNodes, drawTrail, drawParticles, atPct]);
+
+  useEffect(() => {
+    tickRef.current = tick;
+  }, [tick]);
 
   useEffect(() => {
     const wrap = wrapRef.current; if (!wrap) return;
@@ -193,14 +198,16 @@ const RoadmapCanvas = ({ children, nodes = [], activePath = true, onNodeActive }
       }
     }, 16);
 
-    state.current.raf = requestAnimationFrame(tick);
+    state.current.raf = requestAnimationFrame(tickRef.current);
+
+    const currentState = state.current;
 
     return () => {
       ro.disconnect();
       wrap.removeEventListener('mousemove', onMove);
       wrap.removeEventListener('mouseleave', onLeave);
       clearInterval(auto);
-      if (state.current.raf) cancelAnimationFrame(state.current.raf);
+      if (currentState.raf) cancelAnimationFrame(currentState.raf);
     };
   }, [getPoints, tick, nodes, atPct]);
 

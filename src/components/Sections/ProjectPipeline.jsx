@@ -1,20 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { projects } from "../../data/portfolio";
-import { Folder, GitBranch, ChevronRight, MousePointer2 } from "lucide-react";
+import { Folder, GitBranch, ChevronRight, MousePointer2, Github } from "lucide-react";
 
-const SECTIONS = Object.entries(projects).map(([category, items], i) => ({
-  id: category.toLowerCase().replace(/\s+/g, '-'),
-  num: (i + 1).toString().padStart(2, '0'),
-  label: category.toUpperCase(),
-  title: category.split(' ')[0],
-  titleAccent: category.split(' ').slice(1).join(' '),
-  sub: i === 0 ? "Real-time ecosystem · Production-grade architecture" :
-    i === 1 ? "Adaptive algorithms · High-performance inference" :
-      i === 2 ? "Interactive orbits · Geospatial insight" :
-        "Technological ecosystem · Global contributors",
-  projects: items
-}));
+const projectOrder = ["Machine Learning", "Web Development", "Data Visualization", "Open Source"];
+
+const SECTIONS = projectOrder.map((category, i) => {
+  const items = projects[category];
+  return {
+    id: category.toLowerCase().replace(/\s+/g, '-'),
+    num: (i + 1).toString().padStart(2, '0'),
+    label: category.toUpperCase(),
+    title: category.split(' ')[0],
+    titleAccent: category.split(' ').slice(1).join(' '),
+    sub: i === 0 ? "Adaptive algorithms · High-performance inference" :
+      i === 1 ? "Real-time ecosystem · Production-grade architecture" :
+        i === 2 ? "Interactive orbits · Geospatial insight" :
+          "Technological ecosystem · Global contributors",
+    projects: items
+  };
+});
 
 export default function ProjectPipeline({ onOpenModal }) {
   const containerRef = useRef(null);
@@ -175,7 +180,7 @@ export default function ProjectPipeline({ onOpenModal }) {
                         <div className="flex justify-between items-start mb-6">
                           <div className="flex items-center gap-4">
                             <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-lg">
-                              <Folder size={18} />
+                              {s.label === "OPEN SOURCE" ? <Github size={18} /> : <Folder size={18} />}
                             </div>
                             <div>
                               <h4 className="text-lg font-bold group-hover:text-accent transition-colors">{p.title}</h4>
@@ -185,6 +190,8 @@ export default function ProjectPipeline({ onOpenModal }) {
 
                           <a
                             href={p.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                             className="p-2 text-muted hover:text-accent transition-colors"
                           >

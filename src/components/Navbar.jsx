@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import Magnetic from './ui/Magnetic';
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = ({ theme, toggleTheme, onOpenResumeModal }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,13 +22,18 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-background/80 backdrop-blur-lg border-b border-foreground/5' : 'py-8 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.div 
+        <motion.a 
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-3xl font-cursive text-gradient"
+          className="text-3xl font-cursive text-gradient cursor-pointer"
         >
           Aman
-        </motion.div>
+        </motion.a>
         
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link, i) => (
@@ -52,13 +57,12 @@ const Navbar = ({ theme, toggleTheme }) => {
           </button>
 
           <Magnetic strength={0.2}>
-            <a 
-              href="/Resume.pdf"
-              download="Aman_Kumar_Resume.pdf"
+            <button 
+              onClick={onOpenResumeModal}
               className="px-5 py-2.5 bg-accent/10 border border-accent/20 text-accent rounded-full text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-300"
             >
               Resume
-            </a>
+            </button>
           </Magnetic>
         </div>
       </div>

@@ -50,7 +50,7 @@ const CustomCursor = () => {
       <motion.div
         className="fixed top-0 left-0 w-2 h-2 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference"
         animate={{
-          opacity: isHidden ? 1 : (isHovering ? 0 : 1),
+          opacity: (isHidden || isHovering) ? 0 : 1,
           scale: isClicking ? 0.5 : 1,
         }}
         style={{
